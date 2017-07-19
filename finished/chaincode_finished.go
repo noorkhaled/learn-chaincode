@@ -22,7 +22,35 @@ import (
 
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
+//Models 
+type Item struct {
+	Flavor           string  `json:"flavor"`
+	ExpiryDate       string  `json:"expirydate"`
+	Price            float64 `json:"price"`
+	Calories         int     `json:"calories"`
+	Brand            string  `json:"brand"`
+	Ingredients      string  `json:"ingredients"`
+	Size             string  `json:"size"`	
+    Code 	         int     `json:"code"`
+	Category         string  `json:"category"`
+	
+}
 
+
+type Account struct {
+	Email          string  `json:"email"`
+	Name           string  `json:"name"`
+	CashBalance    float64 `json:"cashBalance"`
+	Password       string  `json:"password"`
+}
+
+type Transaction struct {
+	Code            int     `json:"code"`
+	Email          string   `json:"email"`
+	Date  		   string   `json:"date"`
+	Time   		   int      `json:"time"`
+
+}
 // SimpleChaincode example simple Chaincode implementation
 type SimpleChaincode struct {
 }
